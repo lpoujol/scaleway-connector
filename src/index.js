@@ -1,3 +1,7 @@
+process.env.SENTRY_DNS =
+  process.env.SENTRY_DNS ||
+  'https://1c8be841977f40f992a22e4f26a225e4:e91462663958491d9540f2ffaa60dcd4@sentry.cozycloud.cc/52'
+
 const {
   BaseKonnector,
   requestFactory,
@@ -31,14 +35,21 @@ async function start(fields) {
     })
     log('info', 'Parsing list of documents')
     const documents = invoices.map(
-      ({ organization_id, start_date, id, total_undiscounted: amount }) => ({
+      ({
+        organization_id,
+        start_date,
+        id,
+        total_undiscounted: amount,
+        currency
+      }) => ({
         fileurl: `https://billing.scaleway.com/invoices/${organization_id}/${start_date}/${id}?format=pdf&x-auth-token=${token}`,
         filename: `${moment(new Date(start_date)).format(
           'YYYY-MM-DD'
-        )}_${amount}_${organization_id}_${id}.pdf`,
+        )}_${amount}_${currency}.pdf`,
         vendor: 'scaleway',
         date: new Date(start_date),
-        amount: amount
+        amount: amount,
+        currency: currency
       })
     )
 
