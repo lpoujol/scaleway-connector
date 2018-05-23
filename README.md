@@ -1,4 +1,4 @@
-[Cozy][cozy] <YOUR SUPER NEW KONNECTOR NAME>
+[Cozy][cozy] Scaleway connector
 =======================================
 
 What's Cozy?
@@ -11,8 +11,7 @@ What's Cozy?
 What is this konnector about ?
 ------------------------------
 
-This konnector retrieves your <SOME DATA> and <SOME OTHER DATA> from <SERVICE>
-<YOUR DESCRIPTION HERE>
+This konnector retrieves your invoices from https://www.scaleway.com/
 
 ### Open a Pull-Request
 
@@ -45,8 +44,7 @@ This connector uses [cozy-konnector-libs](https://github.com/cozy/cozy-konnector
 
 ### Maintainer
 
-The lead maintainers for this konnector is [Enguerran](https://github.com/enguerran)
-
+The lead maintainers for this konnector are @konnectors/maintainers.
 
 ### Get in touch
 
@@ -62,7 +60,7 @@ You can reach the Cozy Community by:
 License
 -------
 
-cozy-konnector-scaleway is developed by [Enguerran](https://github.com/enguerran) and distributed under the [AGPL v3 license][agpl-3.0].
+cozy-konnector-scaleway is developed by @konnectors/maintainers and distributed under the [AGPL v3 license][agpl-3.0].
 
 [cozy]: https://cozy.io "Cozy Cloud"
 [agpl-3.0]: https://www.gnu.org/licenses/agpl-3.0.html
