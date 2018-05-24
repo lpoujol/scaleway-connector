@@ -5,7 +5,7 @@ env:
   global:
   - GH_USER_EMAIL="travis@example.org"
   - GH_USER_NAME="cozy-bot"
-  - DEPLOY_REPOSITORY="git@github.com:konnectors/cozy-konnector-template.git"
+  - DEPLOY_REPOSITORY="git@github.com:konnectors/scaleway.git"
   - secure: SnjEFLhXn2HF1C3LX9sfTzWhrWwpIPHqCd2Ols6P5Azr01Am1uO1hcuDZxm6sFEoGVMa7kcF/sd1Rckg8X54jfrZetLnIb7mmZJ7LxmQqlrBSDQlfJGxTEzvomFUgJbEG2EmlXm0vGujaT3drHjWxuN6SMOi5f0lIELmitgaE7GRqNynjibFP16EOTuNzctY3Vq33Uf0yyEK/0lfE2qA3ZXlkI6YzDzLPD9NXsQDQK7vAD0ze115+i9f4Kfu4v5LK+QHcy/86GUZ4Il4kpHcqTexUNt8Nvg06PpcXvBs9GwA5uttQOyamOBI6FsXA12qoeN7ovMxPn0vbS9ZF1Z/F9ydcZACwvCmII0Kvfz74PqZ+C5qn2iapRASpE3SZTSs0VWpAHE88gAboC5g7Dyx9oKkpRznOGQgVbm3e6r+KRFxrtXei0RPZ2gRJpMZqk84vkBfvC52rII1eyNzI0jtAtjOmpvsTQFLGFFgjr+gdHWmq85GYllfrab/DarKx5tP/gtd2s0G49+sRNm9UQ4imx+8aFPwNJ8rXdTO0WY6Ci/ko9nU/CKGQMn/Ai2D/OrL/B7T0TevJKamcoqNOEhi/ASwmE8+ZqsQEA4W9HJXF8yEjT83u14BbIq2egF4M3of32ZuShjFy5q7UzB0rGeEvgeesHLzRY5OihI7S/fhnk8=
 cache:
   yarn: true
@@ -31,9 +31,8 @@ deploy:
   on:
     tags: true
 before_install:
-# run the yarn travisDeployKey command to genrate this
-# - openssl aes-256-cbc -K $encrypted_0b21ecdcf920_key -iv $encrypted_0b21ecdcf920_iv
-#   -in github_deploy_key.enc -out /tmp/github_deploy_key -d
+- openssl aes-256-cbc -K $encrypted_0b21ecdcf920_key -iv $encrypted_0b21ecdcf920_iv
+  -in github_deploy_key.enc -out /tmp/github_deploy_key -d
 - eval "$(ssh-agent -s)"
 - chmod 600 /tmp/github_deploy_key
 - ssh-add /tmp/github_deploy_key
