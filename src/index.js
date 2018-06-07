@@ -48,7 +48,7 @@ async function start(fields) {
         )}_${amount}_${currency}.pdf`,
         vendor: 'scaleway',
         date: new Date(start_date),
-        amount: amount,
+        amount: parseFloat(amount),
         currency: currency
       })
     )
