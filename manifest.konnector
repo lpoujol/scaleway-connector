@@ -3,12 +3,12 @@
   "name": "Scaleway",
   "type": "konnector",
   "language": "node",
-  "icon": "icon.svg",
+  "icon": "scaleway.png",
   "slug": "scaleway",
   "source": "git://github.com/konnectors/scaleway.git",
   "editor": "Cozy",
   "vendor_link": "https://www.scaleway.com/",
-  "categories": ["host_provider"],
+  "categories": ["online_services"],
   "fields": {
     "login": {
       "type": "email"
@@ -42,7 +42,7 @@
     }
   },
   "developer": {
-    "name": "Cozy Cloud",
+    "name": "Sébastien Blaisot",
     "url": "https://cozy.io"
   },
   "langs": ["fr", "en"],
