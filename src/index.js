@@ -23,10 +23,10 @@ module.exports = new BaseKonnector(start)
 async function start(fields) {
   log('info', 'Authenticating ...')
   const token = await authenticate(fields.login, fields.password)
-  log('info', 'Successfully logged in')
+  log('info', 'Successfully logged in, token created')
   try {
     log('info', 'Fetching the list of documents')
-    log('info', `With the token ${token}`)
+    log('info', `With the token ${token.slice(0, 9)}...`)
     const { invoices } = await request({
       uri: baseUrl,
       headers: {
@@ -85,8 +85,7 @@ async function authenticate(email, password) {
       uri: 'https://account.scaleway.com/tokens',
       body: {
         email,
-        password,
-        expires: false
+        password
       }
     })
     return id
