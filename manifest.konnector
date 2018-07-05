@@ -84,5 +84,6 @@
       }
     }
   },
+  "banksTransactionRegExp": "\\bscaleway\\b",
   "manifest_version": "2"
 }
