@@ -80,7 +80,9 @@ async function clearToken(token) {
 
 async function authenticate(email, password) {
   try {
-    const { token: { id } } = await request({
+    const {
+      token: { id }
+    } = await request({
       method: 'POST',
       uri: 'https://account.scaleway.com/tokens',
       body: {
