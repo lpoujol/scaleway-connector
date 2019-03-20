@@ -5,7 +5,7 @@
   "language": "node",
   "icon": "scaleway.png",
   "slug": "scaleway",
-  "source": "git://github.com/konnectors/scaleway.git",
+  "source": "git@github.com:konnectors/scaleway.git",
   "editor": "Cozy",
   "vendor_link": "https://www.scaleway.com/",
   "categories": [
